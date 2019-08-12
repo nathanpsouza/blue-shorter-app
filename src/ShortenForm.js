@@ -20,7 +20,7 @@ class ShortenForm extends React.Component {
     event.preventDefault();
     if(this.validURL(this.state.url)) {
       const payload = {short_url: {url: this.state.url}};
-      axios.post('https://blue-shorter.herokuapp.com/shorten', payload).then(response => {
+      axios.post(`${process.env.REACT_APP_API_ADDRESS}/shorten`, payload).then(response => {
         this.setState({valid: true, short_url: response.data.short_url});
         this.forceUpdate();
       });
@@ -42,18 +42,18 @@ class ShortenForm extends React.Component {
 
   render() {
     return (
-      <div class="jumbotron text-center">
+      <div className="jumbotron text-center">
         <form onSubmit={this.handleSubmit} noValidate>
-          <div class="form-group">
-            <div class="input-group mb-3">
-              <input type="text" class="form-control form-control-lg" onChange={this.handleChange} value={this.state.url} placeholder="URL TO SHORT" />
-                <div class="input-group-append">
-                  <input class="btn btn-outline-primary" type="submit" value="Shorten!" />
+          <div className="form-group">
+            <div className="input-group mb-3">
+              <input type="text" className="form-control form-control-lg" onChange={this.handleChange} value={this.state.url} placeholder="URL TO SHORT" />
+                <div className="input-group-append">
+                  <input className="btn btn-outline-primary" type="submit" value="Shorten!" />
                 </div>
             </div>
             
             { this.state.valid ? null : <InvalidUrl/>}
-            { this.state.short_url != '' ? <CreatedUrl shortUrl={this.state.short_url} url={this.state.url}/> : null }
+            { this.state.short_url !== '' ? <CreatedUrl shortUrl={this.state.short_url} url={this.state.url}/> : null }
             
           </div>
         </form>

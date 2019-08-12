@@ -8,22 +8,22 @@ import * as serviceWorker from './serviceWorker';
 
 const routing = (
   <Router>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="navbar-collapse">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <Link class="nav-link" to="/">Home</Link>
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div className="navbar-collapse">
+        <ul className="navbar-nav">
+          <li className="nav-item">
+            <Link className="nav-link" to="/">Home</Link>
           </li>
-          <li class="nav-item">
-            <Link class="nav-link" to="/top-100">Check top 100 visited urls</Link>
+          <li className="nav-item">
+            <Link className="nav-link" to="/top-100">Check top 100 visited urls</Link>
           </li>
         </ul>
       </div>
     </nav>
     <Switch>
-      <div clas="container">
-        <div class="row-fixed content w-75 content">
-          <div class="col-sm">
+      <div className="container">
+        <div className="row-fixed content w-75 content">
+          <div className="col-sm">
             <Route exact path="/" component={ShortenForm} />
             <Route path="/top-100" component={TopVisits} />
           </div>

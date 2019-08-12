@@ -12,7 +12,9 @@ class TopVisits extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('https://blue-shorter.herokuapp.com/urls/top_visits').then(response => {
+    console.log(process.env.REACT_APP_API_ADDRESS);
+    console.log(process.env.NODE_ENV)
+    axios.get(`${process.env.REACT_APP_API_ADDRESS}/urls/top_visits`).then(response => {
       this.setState({urls: response.data});
     });
   }
