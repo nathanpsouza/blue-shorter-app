@@ -9,6 +9,7 @@ class TopShortUrl extends React.Component {
             <strong>URL:</strong> 
             <a href={this.props.shortUrl.url} target="_blank">{this.props.shortUrl.url}</a>
           </p>
+          <p><strong>Title:</strong> {this.props.shortUrl.title}</p>
           <p>
             <strong>Short URL:</strong> 
             <a href={this.props.shortUrl.short_url} target="_blank">{this.props.shortUrl.short_url}</a>
