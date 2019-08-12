@@ -25,10 +25,20 @@ class ShortenForm extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <input type="text" onChange={this.handleChange} value={this.state.url} placeholder="URL TO SHORT" />
-        <input type="submit" value="Enviar" />
-      </form>
+      <div class="jumbotron text-center">
+        <form onSubmit={this.handleSubmit}>
+          <div class="form-group">
+          <div class="input-group mb-3">
+          <input type="text" class="form-control form-control-lg" onChange={this.handleChange} value={this.state.url} placeholder="URL TO SHORT" />
+            <div class="input-group-append">
+              <input class="btn btn-outline-primary" type="submit" value="Shorten!" />
+            </div>
+          </div>
+            
+            
+          </div>
+        </form>
+      </div>
     );
   }
 }
